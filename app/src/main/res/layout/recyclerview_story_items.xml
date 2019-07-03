@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="7dp"
+    app:contentPadding="7dp"
+    app:cardCornerRadius="7dp"
+    app:cardMaxElevation="7dp"
+    android:layout_gravity="center"
+    android:layout_margin="7dp"
+    android:background="#FFF"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:id="@+id/iv_story_poster"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:focusable="true"
+            android:layout_margin="5dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_margin="3dp"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_story_title"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="The Weird Photographer"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_words"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="140 words"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
