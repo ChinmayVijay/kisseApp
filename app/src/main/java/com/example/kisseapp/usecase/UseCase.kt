@@ -3,9 +3,9 @@ package com.example.kisseapp.usecase
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-suspend operator <R> fun UseCase<Unit,R>.invoke():LiveData<Result<R>> = this(Unit)
+suspend operator fun <R> UseCase<Unit,R>.invoke(): LiveData<Result<R>> = this(Unit)
 
-suspend operator <R> fun UseCase<Unit,R>.invoke(result: MutableLiveData<Result<R>>) = this(Unit,Unit)
+suspend operator fun <R> UseCase<Unit,R>.invoke(result: MutableLiveData<Result<R>>) = this(Unit,result)
 
 abstract class UseCase<in P, R> {
     abstract suspend fun execute(request:P): R
@@ -18,7 +18,7 @@ abstract class UseCase<in P, R> {
         }
     }
 
-    suspend operator fun invoke(request:P, result:MutableLiveData<R>){
+    suspend operator fun invoke(request:P, result: MutableLiveData<Result<R>>){
         try{
             execute(request).let { useCaseResult ->
                 result.postValue(Result.success(useCaseResult))
@@ -28,7 +28,7 @@ abstract class UseCase<in P, R> {
         }
     }
 
-    suspend operator fun invoke(request: P):LiveData<Result<R>>{
+    suspend operator fun invoke(request: P): LiveData<Result<R>> {
         val liveData = MutableLiveData<Result<R>>()
         this(request,liveData)
         return liveData
