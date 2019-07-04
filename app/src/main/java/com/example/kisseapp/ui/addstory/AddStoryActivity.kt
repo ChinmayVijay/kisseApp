@@ -1,8 +1,8 @@
-package com.example.kisseapp
+package com.example.kisseapp.ui.addstory
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kisseapp.ui.addstory.AddStoryFragment
+import com.example.kisseapp.R
 
 class AddStoryActivity : AppCompatActivity() {
 
