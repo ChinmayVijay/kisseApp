@@ -2,6 +2,7 @@ package com.example.kisseapp.di
 
 import com.example.kisseapp.usecase.AddStoryUseCase
 import com.example.kisseapp.usecase.DeleteStoryUseCase
+import com.example.kisseapp.usecase.StoryViewUseCase
 import com.example.kisseapp.usecase.UpdateStoryUseCase
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
@@ -12,6 +13,7 @@ object StoryUseCaseSetup {
             single{AddStoryUseCase()}
             single{ UpdateStoryUseCase() }
             single{ DeleteStoryUseCase() }
+            single{StoryViewUseCase(get())}
         }
     }
 
